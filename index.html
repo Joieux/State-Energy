@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home Energy Rebates</title>
+    <meta name="description" content="Explore home energy rebate programs, eligibility, and how to apply." />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="banner">
+      <img src="banner.png" alt="Energy Saver North Carolina Banner" />
+    </div>
+    <header>
+      <div class="wrap">
+        <div class="nav">
+          <div class="brand" aria-label="Site identity">
+            <div class="badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2c3.6 2.2 6 5.9 6 10.1 0 5.1-4.1 9.2-9.2 9.2S-.4 17.2 1.8 12.7C4 8.2 7.8 5.5 12 2Z" stroke="rgba(7,10,18,.85)" stroke-width="1.6"/>
+                <path d="M7.7 13.3c2.3-.1 4.2-1.9 4.3-4.2 2.3.1 4.1 2 4.2 4.3-2.5 2.7-5.7 3.8-8.5-.1Z" fill="rgba(7,10,18,.85)"/>
+              </svg>
+            </div>
+            <div>
+              <h1 id="siteTitle">Home Energy Rebates</h1>
+              <p id="siteSub">Find upgrades, rebates, and next steps</p>
+            </div>
+          </div>
+
+          <nav class="navlinks" aria-label="Page sections">
+            <a href="#programs">Programs</a>
+            <a href="#upgrades">Upgrades</a>
+            <a href="#steps">How to apply</a>
+            <a href="#resources">Resources</a>
+          </nav>
+
+          <div class="ctaRow">
+            <button class="btn" type="button" id="primaryCta">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <section id="programs" class="programsHero" aria-label="North Carolina Energy Programs">
+          <div class="programsHeader">
+            <div class="kicker" id="kicker">
+              <span class="kickerDot" aria-hidden="true"></span>
+              <span id="kickerText">State program spotlight</span>
+            </div>
+            
+            <h2 id="heroTitle">North Carolina Home Energy Rebates</h2>
+            <p id="heroBody">
+              Two pathways to help you save energy and money with home upgrades. Choose efficiency improvements, electrification upgrades, or combine both.
+            </p>
+            
+            <div class="heroActions">
+              <button class="btn" type="button" id="openSignupHero">Sign up for updates</button>
+            </div>
+          </div>
+
+          <div class="programsGrid">
+            <div class="pathwayCard" id="programCard1" onclick="window.location.href='homes.html'" style="cursor: pointer;">
+              <div class="pathwayHeader">
+                <div class="pathwayIcon homes">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20 4c-7.5 0-13 3.8-14.6 10.6C4.8 17.4 6.7 20 10 20c7.7 0 10-8.2 10-16Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M6 18c2.7-2.7 7.2-6.1 13.2-8.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="pathwayMeta">
+                  <h3>HOMES Program</h3>
+                  <p class="pathwaySubtitle">Home Efficiency Upgrades</p>
+                  <div class="pathwayAmount">Up to $16,000</div>
+                </div>
+              </div>
+              <p class="pathwayDescription">
+                Supports projects like insulation, air sealing, and heating and cooling efficiency improvements. Larger energy savings can mean larger rebates.
+              </p>
+              <div class="pathwayFeatures">
+                <div class="feature">
+                  <span class="featureDot"></span>
+                  <span>Energy efficiency improvements</span>
+                </div>
+                <div class="feature">
+                  <span class="featureDot"></span>
+                  <span>Rebates based on energy savings</span>
+                </div>
+                <div class="feature">
+                  <span class="featureDot"></span>
+                  <span>Insulation, air sealing, HVAC</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pathwayCard" id="programCard2" onclick="window.location.href='hear.html'" style="cursor: pointer;">
+              <div class="pathwayHeader">
+                <div class="pathwayIcon hear">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M13 2 4 14h7l-1 8 10-14h-7l0-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="pathwayMeta">
+                  <h3>HEAR Program</h3>
+                  <p class="pathwaySubtitle">Home Electrification & Appliances</p>
+                  <div class="pathwayAmount">Up to $14,000</div>
+                </div>
+              </div>
+              <p class="pathwayDescription">
+                Supports high efficiency electric appliances and related upgrades such as heat pump water heaters, electric cooking, and more.
+              </p>
+              <div class="pathwayFeatures">
+                <div class="feature">
+                  <span class="featureDot"></span>
+                  <span>Electric appliance rebates</span>
+                </div>
+                <div class="feature">
+                  <span class="featureDot"></span>
+                  <span>Heat pump water heaters</span>
+                </div>
+                <div class="feature">
+                  <span class="featureDot"></span>
+                  <span>Electric cooking upgrades</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="programStats">
+            <div class="statGrid" id="stats"></div>
+          </div>
+
+          <div class="programFooter">
+            <div class="tiny" id="disclaimer">
+              This page is informational. Eligibility and amounts depend on program rules and your project details. Check the official program site for current requirements.
+            </div>
+          </div>
+        </section>
+
+        <section id="audience" class="grid2" aria-label="Program Benefits">
+          <div class="card">
+            <h3>Program Benefits</h3>
+            <p>Key advantages of participating in North Carolina's energy rebate programs.</p>
+            <div class="list">
+              <div class="item">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2c4 6 7 9 7 13a7 7 0 1 1-14 0c0-4 3-7 7-13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="itemTitle">Lower Energy Bills</p>
+                  <p class="itemBody">Reduce monthly utility costs with efficient upgrades and modern appliances.</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon alt">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="itemTitle">Improved Comfort</p>
+                  <p class="itemBody">Better temperature control and air quality throughout your home.</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="icon warn">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2 20 6v7c0 5-3.4 9-8 9s-8-4-8-9V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="itemTitle">Environmental Impact</p>
+                  <p class="itemBody">Reduce carbon footprint and support clean energy initiatives.</p>
+                </div>
+              </div>
+            </div>
+            
+            <h4 style="margin-top: 32px; margin-bottom: 16px; font-size: 16px; font-weight: 650; color: rgba(234,240,255,.9);">Who can benefit</h4>
+            <p style="margin-bottom: 16px; font-size: 14px; opacity: 0.8;">Programs serve diverse households with targeted support for those who need it most.</p>
+            <div class="list" id="audienceList"></div>
+            
+            <h4 style="margin-top: 32px; margin-bottom: 16px; font-size: 16px; font-weight: 650; color: rgba(234,240,255,.9);">How to apply</h4>
+            <p style="margin-bottom: 16px; font-size: 14px; opacity: 0.8;">Simple steps to get started with your rebate application.</p>
+            <div class="steps" id="stepList"></div>
+          </div>
+          
+          <div class="card">
+            <h3>Popular upgrades</h3>
+            <p id="upgradeIntro">Official North Carolina eligible upgrades with current rebate amounts.</p>
+            <div class="list" id="upgradeList"></div>
+            
+            <h4 style="margin-top: 32px; margin-bottom: 16px; font-size: 16px; font-weight: 650; color: rgba(234,240,255,.9);">Good to know</h4>
+            <p style="margin-bottom: 16px; font-size: 14px; opacity: 0.8;">Important tips to reduce confusion and improve your application experience.</p>
+            <div class="list" id="tipsList"></div>
+          </div>
+        </section>
+
+        <section id="steps" class="grid2" aria-label="Quick links">
+          <div class="card">
+            <h3>Quick links</h3>
+            <p id="linksIntro">Keep these state specific. You can add utility and contractor links later.</p>
+            <div class="linksRow" id="linkRow"></div>
+            <div style="height:12px"></div>
+            <button class="btn" type="button" id="openSignupInline">Sign up for updates</button>
+            <div class="tiny" id="signupTiny">We store sign ups in your browser only, until you connect a real form endpoint.</div>
+          </div>
+          
+          <div class="card" style="opacity: 0; pointer-events: none;">
+            <!-- Empty card for layout balance -->
+          </div>
+        </section>
+
+        <section id="resources" class="card" aria-label="Sources and notes">
+          <h3>Sources</h3>
+          <p id="sourcesText">
+            This prototype points to the official state program site and an external state status overview. Replace these per state.
+          </p>
+          <div class="linksRow" id="sourceLinks"></div>
+
+          <footer>
+            <div id="footerText">Built as a reusable static template. Swap the config object to launch another state.</div>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
