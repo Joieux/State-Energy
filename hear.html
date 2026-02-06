@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HEAR Program - North Carolina Energy Rebates</title>
+    <title>HEAR Program - North Carolina Energy Grants</title>
     <meta name="description" content="Learn about North Carolina's HEAR program for home electrification and appliance rebates." />
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -19,8 +19,8 @@
               </svg>
             </div>
             <div>
-              <h1>HEAR Program</h1>
-              <p>Home Electrification & Appliances</p>
+              <h1 id="headerTitle">HEAR Program</h1>
+              <p id="headerSub">Home Electrification & Appliances</p>
             </div>
           </div>
 
@@ -40,8 +40,8 @@
               <span>HEAR Program Overview</span>
             </div>
             
-            <h2>Home Electrification & Appliances</h2>
-            <p>
+            <h2 id="detailFullTitle">Home Electrification & Appliances</h2>
+            <p id="detailDesc">
               The HEAR program provides rebates for high-efficiency electric appliances and related upgrades including heat pump water heaters, electric cooking equipment, and electrical panel upgrades to support electrification.
             </p>
           </div>
@@ -55,41 +55,18 @@
                   </svg>
                 </div>
                 <div class="pathwayMeta">
-                  <h3>HEAR Program</h3>
-                  <p class="pathwaySubtitle">Home Electrification & Appliances</p>
-                  <div class="pathwayAmount">Up to $14,000</div>
+                  <h3 id="detailTitle">HEAR Program</h3>
+                  <div class="pathwayAmount" id="detailAmount">Up to $14,000</div>
                 </div>
               </div>
-              <p class="pathwayDescription">
+              <p class="pathwayDescription" id="detailLongDesc">
                 The HEAR program offers rebates for qualifying electric appliances and equipment that help homeowners transition to efficient, all-electric homes while reducing energy costs and carbon emissions.
               </p>
             </div>
           </div>
 
           <div class="programStats">
-            <div class="statGrid">
-              <div class="stat">
-                <div class="statTop">
-                  <span>Maximum Rebate</span>
-                  <span style="opacity:.65">Per household</span>
-                </div>
-                <div class="statValue">$14,000</div>
-              </div>
-              <div class="stat">
-                <div class="statTop">
-                  <span>Heat Pump Water Heater</span>
-                  <span style="opacity:.65">Up to</span>
-                </div>
-                <div class="statValue">$1,750</div>
-              </div>
-              <div class="stat">
-                <div class="statTop">
-                  <span>Electric Range</span>
-                  <span style="opacity:.65">Up to</span>
-                </div>
-                <div class="statValue">$840</div>
-              </div>
-            </div>
+            <div class="statGrid" id="detailStats"></div>
           </div>
         </section>
 
@@ -97,92 +74,13 @@
           <div class="card">
             <h3>Eligible Appliances</h3>
             <p>HEAR program covers high-efficiency electric appliances and electrification equipment.</p>
-            <div class="list">
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2c4 6 7 9 7 13a7 7 0 1 1-14 0c0-4 3-7 7-13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Heat pump water heaters</p>
-                  <p class="itemBody">Energy-efficient electric water heating with up to $1,750 rebate.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2c2 4 2 6 0 8 3-1 6 2 6 6a6 6 0 1 1-12 0c0-2 1-4 3-6 1-1 2-2 3-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Electric cooking</p>
-                  <p class="itemBody">Electric ranges, cooktops, and induction cooking equipment.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M13 2 4 14h7l-1 8 10-14h-7l0-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Heat pump space heating</p>
-                  <p class="itemBody">Efficient electric heating and cooling systems.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M14.7 6.3a4.5 4.5 0 0 0 6 6l-7.7 7.7a2.2 2.2 0 0 1-3.1 0l-5-5a2.2 2.2 0 0 1 0-3.1l7.7-7.7a4.5 4.5 0 0 0 5.9 1.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Electrical upgrades</p>
-                  <p class="itemBody">Panel upgrades and wiring to support new electric appliances.</p>
-                </div>
-              </div>
-            </div>
+            <div class="list" id="detailImprovements"></div>
           </div>
           
           <div class="card">
             <h3>Rebate Amounts</h3>
             <p>Fixed rebate amounts based on appliance type and efficiency ratings.</p>
-            <div class="list">
-              <div class="item">
-                <div class="icon warn">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2c4 6 7 9 7 13a7 7 0 1 1-14 0c0-4 3-7 7-13Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Heat pump water heater</p>
-                  <p class="itemBody">$1,750 for qualifying ENERGY STAR models.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2c2 4 2 6 0 8 3-1 6 2 6 6a6 6 0 1 1-12 0c0-2 1-4 3-6 1-1 2-2 3-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Electric range</p>
-                  <p class="itemBody">Up to $840 for induction and electric cooking equipment.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M13 2 4 14h7l-1 8 10-14h-7l0-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Heat pump HVAC</p>
-                  <p class="itemBody">Rebates vary based on system size and efficiency rating.</p>
-                </div>
-              </div>
-            </div>
+            <div class="list" id="detailHowItWorks"></div>
           </div>
         </section>
 
@@ -225,43 +123,7 @@
           <div class="card">
             <h3>Important Requirements</h3>
             <p>Key program requirements and eligibility criteria.</p>
-            <div class="list">
-              <div class="item">
-                <div class="icon warn">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2 20 6v7c0 5-3.4 9-8 9s-8-4-8-9V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Income limits</p>
-                  <p class="itemBody">Must meet program income requirements based on household size.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Primary residence only</p>
-                  <p class="itemBody">Appliances must be installed in your primary residence.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2 20 6v7c0 5-3.4 9-8 9s-8-4-8-9V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Certified appliances</p>
-                  <p class="itemBody">Equipment must meet program efficiency and certification standards.</p>
-                </div>
-              </div>
-            </div>
+            <div class="list" id="detailRequirements"></div>
           </div>
         </section>
 
@@ -275,8 +137,8 @@
             <a class="linkBtn" href="https://www.deq.nc.gov/energy-climate/state-energy-office/energy-saver-north-carolina/energy-efficiency-rebates" target="_blank" rel="noopener">NC DEQ Program Info</a>
           </div>
 
-          <footer style="margin-top: 32px;">
-            <div style="font-size: 13px; opacity: 0.65; text-align: center;">
+          <footer class="mt32">
+            <div class="tac tiny">
               This page provides general program information. Eligibility, appliance lists, and rebate amounts are subject to program updates and availability.
             </div>
           </footer>
@@ -285,5 +147,6 @@
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
   </body>
 </html>

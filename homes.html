@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HOMES Program - North Carolina Energy Rebates</title>
+    <title>HOMES Program - North Carolina Energy Grants</title>
     <meta name="description" content="Learn about North Carolina's HOMES program for home efficiency upgrades and energy rebates." />
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -19,8 +19,8 @@
               </svg>
             </div>
             <div>
-              <h1>HOMES Program</h1>
-              <p>Home Efficiency Upgrades</p>
+              <h1 id="headerTitle">HOMES Program</h1>
+              <p id="headerSub">Home Efficiency Upgrades</p>
             </div>
           </div>
 
@@ -40,8 +40,8 @@
               <span>HOMES Program Overview</span>
             </div>
             
-            <h2>Home Efficiency Upgrades</h2>
-            <p>
+            <h2 id="detailFullTitle">Home Efficiency Upgrades</h2>
+            <p id="detailDesc">
               The HOMES program supports comprehensive home efficiency improvements including insulation, air sealing, and heating and cooling system upgrades. Rebates are based on actual energy savings achieved through your project.
             </p>
           </div>
@@ -56,41 +56,18 @@
                   </svg>
                 </div>
                 <div class="pathwayMeta">
-                  <h3>HOMES Program</h3>
-                  <p class="pathwaySubtitle">Home Efficiency Upgrades</p>
-                  <div class="pathwayAmount">Up to $16,000</div>
+                  <h3 id="detailTitle">HOMES Program</h3>
+                  <div class="pathwayAmount" id="detailAmount">Up to $16,000</div>
                 </div>
               </div>
-              <p class="pathwayDescription">
+              <p class="pathwayDescription" id="detailLongDesc">
                 The HOMES program provides rebates for whole-home efficiency improvements that achieve at least 20% modeled energy savings. The program rewards deeper energy savings with higher rebate amounts.
               </p>
             </div>
           </div>
 
           <div class="programStats">
-            <div class="statGrid">
-              <div class="stat">
-                <div class="statTop">
-                  <span>Maximum Rebate</span>
-                  <span style="opacity:.65">Per household</span>
-                </div>
-                <div class="statValue">$16,000</div>
-              </div>
-              <div class="stat">
-                <div class="statTop">
-                  <span>Minimum Savings</span>
-                  <span style="opacity:.65">Required</span>
-                </div>
-                <div class="statValue">20%</div>
-              </div>
-              <div class="stat">
-                <div class="statTop">
-                  <span>Rebate Structure</span>
-                  <span style="opacity:.65">Performance-based</span>
-                </div>
-                <div class="statValue">$2,000-$4,000</div>
-              </div>
-            </div>
+            <div class="statGrid" id="detailStats"></div>
           </div>
         </section>
 
@@ -98,100 +75,13 @@
           <div class="card">
             <h3>Eligible Improvements</h3>
             <p>HOMES program covers efficiency upgrades that reduce whole-home energy consumption.</p>
-            <div class="list">
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="M2 16l10 5 10-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Insulation upgrades</p>
-                  <p class="itemBody">Attic, wall, and floor insulation to reduce energy loss.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2v20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    <path d="M4 7l16 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    <path d="M20 7 4 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Air sealing</p>
-                  <p class="itemBody">Eliminate drafts and improve building envelope performance.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2v20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    <path d="M4 7l16 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    <path d="M20 7 4 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">HVAC efficiency</p>
-                  <p class="itemBody">High-efficiency heating and cooling system upgrades.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Windows and doors</p>
-                  <p class="itemBody">Energy-efficient windows and door replacements.</p>
-                </div>
-              </div>
-            </div>
+            <div class="list" id="detailImprovements"></div>
           </div>
           
           <div class="card">
             <h3>How Rebates Work</h3>
             <p>HOMES rebates are performance-based, rewarding greater energy savings.</p>
-            <div class="list">
-              <div class="item">
-                <div class="icon warn">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="1.6"/>
-                    <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Pre-upgrade assessment</p>
-                  <p class="itemBody">Home energy audit to establish baseline consumption.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M14.7 6.3a4.5 4.5 0 0 0 6 6l-7.7 7.7a2.2 2.2 0 0 1-3.1 0l-5-5a2.2 2.2 0 0 1 0-3.1l7.7-7.7a4.5 4.5 0 0 0 5.9 1.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Qualified contractor work</p>
-                  <p class="itemBody">Improvements completed by registered contractors.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M7 2h7l5 5v15a2 2 0 0 1-2 2H7a2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="M14 2v6h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Performance verification</p>
-                  <p class="itemBody">Post-upgrade assessment confirms energy savings achieved.</p>
-                </div>
-              </div>
-            </list>
+            <div class="list" id="detailHowItWorks"></div>
           </div>
         </section>
 
@@ -234,42 +124,7 @@
           <div class="card">
             <h3>Important Requirements</h3>
             <p>Key program requirements and considerations.</p>
-            <div class="list">
-              <div class="item">
-                <div class="icon warn">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2 20 6v7c0 5-3.4 9-8 9s-8-4-8-9V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Income eligibility</p>
-                  <p class="itemBody">Must meet program income limits based on area median income.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Primary residence</p>
-                  <p class="itemBody">Property must be your primary residence, not rental or vacation home.</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="icon alt">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M14.7 6.3a4.5 4.5 0 0 0 6 6l-7.7 7.7a2.2 2.2 0 0 1-3.1 0l-5-5a2.2 2.2 0 0 1 0-3.1l7.7-7.7a4.5 4.5 0 0 0 5.9 1.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="itemTitle">Registered contractors</p>
-                  <p class="itemBody">Work must be completed by program-approved contractors.</p>
-                </div>
-              </div>
-            </div>
+            <div class="list" id="detailRequirements"></div>
           </div>
         </section>
 
@@ -278,13 +133,13 @@
           <p>
             For the most current information, eligibility requirements, and to apply, visit the official program website.
           </p>
-          <div class="linksRow">
+          <div class="linksRow" id="detailLinks">
             <a class="linkBtn" href="https://energysavernc.org/" target="_blank" rel="noopener">Energy Saver NC</a>
             <a class="linkBtn" href="https://www.deq.nc.gov/energy-climate/state-energy-office/energy-saver-north-carolina/energy-efficiency-rebates" target="_blank" rel="noopener">NC DEQ Program Info</a>
           </div>
 
-          <footer style="margin-top: 32px;">
-            <div style="font-size: 13px; opacity: 0.65; text-align: center;">
+          <footer class="mt32">
+            <div class="tac tiny">
               This page provides general program information. Eligibility, requirements, and rebate amounts are subject to program rules and availability.
             </div>
           </footer>
@@ -293,5 +148,6 @@
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
   </body>
 </html>

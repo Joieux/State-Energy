@@ -7,7 +7,7 @@
 const CONFIG = {
   stateName: "North Carolina",
   shortState: "NC",
-  programName: "Energy Saver North Carolina",
+  programName: "North Carolina Energy",
   heroKicker: "Official home energy rebates",
   heroTitle: "Home energy rebates for efficiency and electrification upgrades",
   heroBody:
@@ -90,6 +90,62 @@ const CONFIG = {
     { label: "NC DEQ rebate info", url: "https://www.deq.nc.gov/energy-climate/state-energy-office/energy-saver-north-carolina/energy-efficiency-rebates" },
     { label: "NC Clean Tech status analysis", url: "https://nccleantech.ncsu.edu/2025/03/26/50-state-analysis-home-energy-rebate-programs-status/" },
   ],
+  programDetails: {
+    homes: {
+      title: "Home Efficiency Upgrades",
+      fullTitle: "HOMES Program Overview",
+      amount: "Up to $16,000",
+      description: "The HOMES program provides rebates for whole-home efficiency improvements that achieve at least 20% modeled energy savings. The program rewards deeper energy savings with higher rebate amounts.",
+      stats: [
+        { label: "Maximum Rebate", value: "$16,000", note: "Per household" },
+        { label: "Minimum Savings", value: "20%", note: "Required" },
+        { label: "Rebate Structure", value: "$2,000-$4,000", note: "Performance-based" },
+      ],
+      improvements: [
+        { title: "Insulation upgrades", body: "Attic, wall, and floor insulation to reduce energy loss.", icon: "layers" },
+        { title: "Air sealing", body: "Eliminate drafts and improve building envelope performance.", icon: "snow", accent: "alt" },
+        { title: "HVAC efficiency", body: "High-efficiency heating and cooling system upgrades.", icon: "snow" },
+        { title: "Windows and doors", body: "Energy-efficient windows and door replacements.", icon: "home", accent: "alt" },
+      ],
+      howItWorks: [
+        { title: "Pre-upgrade assessment", body: "Home energy audit to establish baseline consumption.", icon: "search", accent: "warn" },
+        { title: "Qualified contractor work", body: "Improvements completed by registered contractors.", icon: "tool" },
+        { title: "Performance verification", body: "Post-upgrade assessment confirms energy savings achieved.", icon: "doc", accent: "alt" },
+      ],
+      requirements: [
+        { title: "Income eligibility", body: "Must meet program income limits based on area median income.", icon: "shield", accent: "warn" },
+        { title: "Primary residence", body: "Property must be your primary residence, not rental or vacation home.", icon: "home" },
+        { title: "Registered contractors", body: "Work must be completed by program-approved contractors.", icon: "tool", accent: "alt" },
+      ]
+    },
+    hear: {
+      title: "Home Electrification & Appliances",
+      fullTitle: "HEAR Program Overview",
+      amount: "Up to $14,000",
+      description: "The HEAR program offers rebates for qualifying electric appliances and equipment that help homeowners transition to efficient, all-electric homes while reducing energy costs and carbon emissions.",
+      stats: [
+        { label: "Maximum Rebate", value: "$14,000", note: "Per household" },
+        { label: "Heat Pump Water Heater", value: "$1,750", note: "Up to" },
+        { label: "Electric Range", value: "$840", note: "Up to" },
+      ],
+      improvements: [
+        { title: "Heat pump water heaters", body: "Energy-efficient electric water heating with up to $1,750 rebate.", icon: "drop" },
+        { title: "Electric cooking", body: "Electric ranges, cooktops, and induction cooking equipment.", icon: "flame", accent: "alt" },
+        { title: "Heat pump space heating", body: "Efficient electric heating and cooling systems.", icon: "bolt" },
+        { title: "Electrical upgrades", body: "Panel upgrades and wiring to support new electric appliances.", icon: "tool", accent: "alt" },
+      ],
+      howItWorks: [
+        { title: "Heat pump water heater", body: "$1,750 for qualifying ENERGY STAR models.", icon: "drop", accent: "warn" },
+        { title: "Electric range", body: "Up to $840 for induction and electric cooking equipment.", icon: "flame" },
+        { title: "Heat pump HVAC", body: "Rebates vary based on system size and efficiency rating.", icon: "bolt", accent: "alt" },
+      ],
+      requirements: [
+        { title: "Income limits", body: "Must meet program income requirements based on household size.", icon: "shield", accent: "warn" },
+        { title: "Primary residence only", body: "Appliances must be installed in your primary residence.", icon: "home" },
+        { title: "Certified appliances", body: "Equipment must meet program efficiency and certification standards.", icon: "shield" },
+      ]
+    }
+  }
 };
 
 const ICONS = {
@@ -137,7 +193,7 @@ function renderList(containerId, items) {
   root.innerHTML = "";
   items.forEach((it) => {
     const div = document.createElement("div");
-    div.className = "item";
+    div.className = root.classList.contains("grid3") || root.classList.contains("grid4") ? "item vertical" : "item";
     div.innerHTML = `
       ${iconBox(it.icon, it.accent)}
       <div>
@@ -154,10 +210,11 @@ function renderPrograms() {
   return;
 }
 
-function renderStats() {
-  const root = $("stats");
+function renderStats(containerId, stats) {
+  const root = $(containerId);
+  if (!root) return;
   root.innerHTML = "";
-  CONFIG.stats.forEach((s) => {
+  stats.forEach((s) => {
     const div = document.createElement("div");
     div.className = "stat";
     div.innerHTML = `
@@ -176,7 +233,7 @@ function renderSteps() {
   root.innerHTML = "";
   CONFIG.steps.forEach((s, idx) => {
     const div = document.createElement("div");
-    div.className = "step";
+    div.className = root.classList.contains("grid4") ? "step vertical" : "step";
     div.innerHTML = `
       <div class="num">${idx + 1}</div>
       <div>
@@ -212,42 +269,62 @@ function toast(msg) {
 
 function openSignupForm() {
   // Open the dedicated form page
-  window.open('form.html', '_blank', 'width=700,height=900,scrollbars=yes,resizable=yes');
+  const popup = window.open("form.html", "_blank", "width=700,height=900,scrollbars=yes,resizable=yes");
+  if (!popup) window.location.href = "form.html";
 }
 
 
+function renderProgramDetail(type) {
+  const d = CONFIG.programDetails[type];
+  if (!d) return;
+
+  setText("detailTitle", d.title);
+  setText("detailFullTitle", d.fullTitle);
+  setText("detailAmount", d.amount);
+  setText("detailDesc", d.description);
+  
+  renderStats("detailStats", d.stats);
+  renderList("detailImprovements", d.improvements);
+  renderList("detailHowItWorks", d.howItWorks);
+  renderList("detailRequirements", d.requirements);
+  
+  // Update browser title
+  document.title = `${type.toUpperCase()} Program - ${CONFIG.stateName} Energy Grants`;
+}
+
 function init() {
-  setText("siteTitle", `${CONFIG.programName} Rebates`);
-  setText("siteSub", `${CONFIG.stateName} home upgrades and rebates`);
-  setText("kickerText", `${CONFIG.stateName} program spotlight`);
-  setText("heroTitle", CONFIG.heroTitle);
-  setText("heroBody", CONFIG.heroBody);
-  setText("programsTitle", `Programs in ${CONFIG.stateName}`);
-  setText("programsIntro", "Two related tracks with different rules and covered upgrades.");
-  setText("stepsIntro", "Use this same structure for every state and swap in the official links.");
-  setText("linksIntro", "These should be the first places you send people.");
-  setText("sourcesText", `Primary references used for this ${CONFIG.stateName} prototype.`);
-  setText("footerText", `Template ready for reuse. Replace CONFIG to launch another state.`);
+  const path = window.location.pathname;
+  const isHomes = path.includes("homes.html");
+  const isHear = path.includes("hear.html");
 
-  setLink("stateStatusBtn", CONFIG.statusOverviewUrl, "State status overview");
+  if (isHomes || isHear) {
+    const type = isHomes ? "homes" : "hear";
+    renderProgramDetail(type);
+    
+    // Header brand info
+    setText("headerTitle", `${type.toUpperCase()} Program`);
+    setText("headerSub", isHomes ? "Home Efficiency Upgrades" : "Home Electrification & Appliances");
+  } else {
+    // Index page logic
+    setText("siteTitle", `${CONFIG.programName} Grants`);
+    setText("siteSub", `${CONFIG.stateName} home upgrades and rebates`);
+    setText("kickerText", `${CONFIG.stateName} program spotlight`);
+    setText("heroTitle", CONFIG.heroTitle);
+    setText("heroBody", CONFIG.heroBody);
+    setText("footerText", `Template ready for reuse. Replace CONFIG to launch another state.`);
 
-  renderStats();
-  renderPrograms();
-
-  console.log("Rendering audience list:", CONFIG.audience);
-  renderList("audienceList", CONFIG.audience);
-  console.log("Rendering upgrade list:", CONFIG.upgrades);
-  renderList("upgradeList", CONFIG.upgrades);
-  console.log("Rendering tips list:", CONFIG.tips);
-  renderList("tipsList", CONFIG.tips);
-  renderSteps();
-
-  renderLinks("linkRow", CONFIG.quickLinks);
-  renderLinks("sourceLinks", CONFIG.sourceLinks);
-
-  $("primaryCta").addEventListener("click", openSignupForm);
-  $("openSignupHero").addEventListener("click", openSignupForm);
-  $("openSignupInline").addEventListener("click", openSignupForm);
+    renderStats("stats", CONFIG.stats);
+    renderList("audienceList", CONFIG.audience);
+    renderList("upgradeList", CONFIG.upgrades);
+    renderList("tipsList", CONFIG.tips);
+    renderSteps();
+    renderLinks("linkRow", CONFIG.quickLinks);
+    renderLinks("sourceLinks", CONFIG.sourceLinks);
+    
+    $("primaryCta").addEventListener("click", openSignupForm);
+    $("openSignupHero").addEventListener("click", openSignupForm);
+    $("openSignupInline").addEventListener("click", openSignupForm);
+  }
 }
 
 init();
